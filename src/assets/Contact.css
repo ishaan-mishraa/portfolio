@@ -1,0 +1,15 @@
+/* contact.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* You can keep the rest of the CSS rules that weren't converted to Tailwind classes here */

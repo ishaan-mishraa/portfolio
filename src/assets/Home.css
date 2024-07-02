@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+AU+VIC:wght@100..400&display=swap');
+.playwrite-au-vic-200 {
+    font-family: "Playwrite AU VIC", cursive;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+  }
+  /* Home.css */
+.intro-name {
+    font-size: 6vh;
+    font-family: 'Handjet', cursive;
+  }
+  
+  .intro-container {
+    padding: 2.5vh 0vw 0vh 0vw;
+  }
+  
+  .intro-body {
+    font-size: 3vh;
+    margin-top: 4vh;
+    /* width: 50vw; */
+    opacity: .5;
+    line-height: 4vh;
+  }
+  
+  .intro-hr {
+    margin: 0 auto;
+  }
+  
+  .inner-titles {
+    font-family: 'Caveat', cursive;
+    font-size: 3vw;
+  }
+  
+  .intro-head {
+    font-size: 2.75vh;
+    display: flex;
+    justify-content: space-evenly;
+    /* width: 50vw; */
+  }
+  
+  .skill-upper-layer {
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: space-evenly;
+  }
+  
+  .skill-lower-layer {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  .skill-info {
+    /* flex: 100px; */
+    text-align: center;
+  }
+  
+  .image-skill {
+    height: 4vw;
+    width: 4vw;
+  }
+  
+  .secondary-titles {
+    font-family: 'Handjet', cursive;
+    /* text-align: center; */
+  }
+  
+  .tab {
+    width: 125px;
+    text-align: center;
+  }
+  
+  .top-image {
+    display: flex;
+    align-items: end;
+    justify-content: space-evenly;
+  }
+  
+  .study-image {
+    border-radius: 50%;
+    width: 300px; /* Adjust the size as needed */
+    height: 300px;
+  }
+  
+  .work-image {
+    width: 300px; /* Adjust the size as needed */
+    height: 300px;
+  }
+  
