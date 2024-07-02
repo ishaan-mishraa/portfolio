@@ -1,5 +1,5 @@
 import React from 'react';
-import './assets/Home.css'; 
+import './Home.css'; 
 import { TypeAnimation } from 'react-type-animation';
 
 function Home() {
