@@ -13,7 +13,7 @@ const ExpandButton = () => {
     <div className="relative">
       <button
         onClick={toggleMenu}
-        className="w-16 h-16 rounded-full bg-blue-700 hover:bg-blue-500 text-white text-3xl flex items-center justify-center focus:outline-none shadow-lg"
+        className="w-16 h-16 rounded-full bg-slate-700 hover:bg-green-500 text-white text-3xl flex items-center justify-center focus:outline-none shadow-lg"
         style={{ transform: isOpen ? 'rotate(45deg)' : 'rotate(0deg)' }}
       >
         <FaPlus />

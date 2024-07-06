@@ -1,5 +1,6 @@
 import React from 'react';
 import './Home.css'; 
+import Skills from './Skills';
 import { TypeAnimation } from 'react-type-animation';
 import ExpandButton from './ExpandButton';
 
@@ -37,49 +38,12 @@ function Home() {
           </p>
         </div>
         <span className="expand-button flex justify-center mt-6"><ExpandButton /></span>
+        <p className="intro-name flex justify-center">Follow me here !</p>
       </div>
 
       <hr className="intro-hr my-8" />
 
-      <div id="skills">
-        <h1 className="inner-titles text-center text-2xl sm:text-3xl md:text-4xl font-bold">My Skills:</h1>
-        <div className="skill-upper-layer flex justify-evenly mt-6">
-          <div className="skill-info text-center">
-            <img className="image-skill w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16" src="./images/c-.png" alt="C++" />
-            <h2 className="secondary-titles text-lg sm:text-xl md:text-2xl mt-2">C++</h2>
-          </div>
-          <div className="skill-info text-center">
-            <img className="image-skill w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16" src="./images/html-5.png" alt="HTML" />
-            <h2 className="secondary-titles text-lg sm:text-xl md:text-2xl mt-2">HTML</h2>
-          </div>
-          <div className="skill-info text-center">
-            <img className="image-skill w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16" src="./images/css-3.png" alt="CSS" />
-            <h2 className="secondary-titles text-lg sm:text-xl md:text-2xl mt-2">CSS</h2>
-          </div>
-          <div className="skill-info text-center">
-            <img className="image-skill w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16" src="./images/js.png" alt="Javascript" />
-            <h2 className="secondary-titles text-lg sm:text-xl md:text-2xl mt-2">Javascript</h2>
-          </div>
-        </div>
-        <div className="skill-lower-layer flex justify-evenly mt-6">
-          <div className="skill-info text-center">
-            <img className="image-skill w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16" src="./images/pngegg.png" alt="PostgreSQL" />
-            <h2 className="secondary-titles text-lg sm:text-xl md:text-2xl mt-2">PostgreSQL</h2>
-          </div>
-          <div className="skill-info text-center">
-            <img className="image-skill w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16" src="./images/nodejs.png" alt="NodeJS" />
-            <h2 className="secondary-titles text-lg sm:text-xl md:text-2xl mt-2">NodeJS</h2>
-          </div>
-          <div className="skill-info text-center">
-            <img className="image-skill w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16" src="./images/atom.png" alt="ReactJS" />
-            <h2 className="secondary-titles text-lg sm:text-xl md:text-2xl mt-2">ReactJS</h2>
-          </div>
-          <div className="skill-info text-center">
-            <img className="image-skill w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16" src="./images/linux.png" alt="Linux" />
-            <h2 className="secondary-titles text-lg sm:text-xl md:text-2xl mt-2">Linux CLI</h2>
-          </div>
-        </div>
-      </div>
+      <Skills/>
 
       <hr className="intro-hr my-8" />
 
