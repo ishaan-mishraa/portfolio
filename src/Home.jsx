@@ -1,6 +1,7 @@
 import React from 'react';
 import './Home.css'; 
 import { TypeAnimation } from 'react-type-animation';
+import ExpandButton from './ExpandButton';
 
 function Home() {
   const date = new Date().getDate();
@@ -30,11 +31,12 @@ function Home() {
           </p>
         </div>
 
-        <div className="intro-body text-xl sm:text-2xl md:text-3xl mt-10 opacity-50 leading-relaxed text-center mx-auto max-w-xl">
-          <p className="p2">
+        <div className="intro-body text-xl sm:text-2xl md:text-sm mt-10 opacity-50 leading-relaxed text-center mx-auto max-w-xl">
+          <p>
             I am currently learning Web Development and going to learn DS and Algo next due to my keen interest in Competitive coding And course syllabus of course✌️.
           </p>
         </div>
+        <span className="expand-button flex justify-center mt-6"><ExpandButton /></span>
       </div>
 
       <hr className="intro-hr my-8" />
