@@ -125,7 +125,7 @@ function Home() {
       institution: "Kalinga Institute of Industrial Technology",
       location: "Bhubaneswar, India",
       duration: "Aug 2022 – Aug 2026",
-      grade: "CGPA: 9.35",
+      // grade: "CGPA: 9.35",
       icon: <GraduationCap className="w-8 h-8" />,
       color: "from-blue-400 to-purple-600"
     },
