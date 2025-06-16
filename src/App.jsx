@@ -1,20 +1,21 @@
-// App.js
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import NavBar from './NavBar';
 import Home from './Home';
 import Contact from './Contact';
-// Import other components for Skills, Works, Toolset, etc.
+import SpaceBackground from './SpaceBackground';
 
 const App = () => {
   return (
     <Router>
-      <NavBar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/contact" element={<Contact />} />
-        {/* Add other routes here */}
-      </Routes>
+      <div className="min-h-screen text-white relative">
+        <SpaceBackground />
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </div>
     </Router>
   );
 };
