@@ -261,7 +261,7 @@ function Home() {
 
           <div className={`${isVisible ? 'fade-in' : 'opacity-0'} max-w-3xl mx-auto mb-12`}>
             <p className="text-lg sm:text-xl text-gray-400 leading-relaxed" style={{ fontFamily: 'Orbitron, monospace' }}>
-              Exploring the vast cosmos of web development and competitive programming. 
+              Exploring the vast cosmos of web development. 
               Currently navigating through the stellar world of <span className="text-cyan-400">Data Structures & Algorithms</span> 
               while crafting digital experiences that transcend ordinary boundaries.
             </p>
