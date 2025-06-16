@@ -1,91 +1,161 @@
 import React, { useEffect, useState } from 'react';
 import { TypeAnimation } from 'react-type-animation';
-import { Rocket, Download, ExternalLink, Terminal, Server, Globe, Code, Database, Package, GitBranch, Zap } from 'lucide-react';
+import { Rocket, Download, ExternalLink, Terminal, Server, Globe, Code, Database, Package, GitBranch, Zap, Briefcase, GraduationCap, Building, Calendar } from 'lucide-react';
 import Skills from './Skills';
 import ExpandButton from './ExpandButton';
+import SpaceNavigator from './SpaceNavigator';
+import TimelineSection from './TimelineSection';
 
 function Home() {
   const [isVisible, setIsVisible] = useState(false);
   const [visibleProjects, setVisibleProjects] = useState([]);
+  const [visibleExperience, setVisibleExperience] = useState([]);
+  const [visibleEducation, setVisibleEducation] = useState([]);
   const date = new Date().getDate();
   const month = new Date().getMonth() + 1;
   const year = new Date().getFullYear();
 
   const projects = [
-  {
-    id: 1,
-    title: "Gate Tracker",
-    subtitle: "GATE Exam Preparation Manager",
-    description: "Comprehensive database application for tracking and managing GATE preparation progress with goal setting and performance analytics.",
-    technologies: ["Node.js", "Express", "MySQL", "React", "Chart.js", "Bootstrap"],
-    features: [
-      "Subject, topic, and subtopic organization system",
-      "Progress tracking with completion status",
-      "Goal setting with deadline management",
-      "Performance visualization with interactive charts",
-      "Data export/import for backup and portability"
-    ],
-    icon: <Database className="w-8 h-8" />,
-    color: "from-amber-400 to-orange-600",
-    category: "Database App"
-  },
-  {
-    id: 2,
-    title: "Manga Scraper CLI",
-    subtitle: "Command-Line Manga Aggregator",
-    description: "Advanced CLI tool for scraping manga from multiple sources and generating PDF collections with interactive UX.",
-    technologies: ["Node.js", "Puppeteer", "PDF-Lib", "Inquirer", "Axios", "CLI-Progress"],
-    features: [
-      "Multi-source manga scraping (Manhuaga.com, Manhuafast.net)",
-      "PDF bundling with custom formatting",
-      "Interactive CLI with progress visualization", 
-      "Modular adapter-based architecture"
-    ],
-    icon: <Terminal className="w-8 h-8" />,
-    color: "from-green-400 to-emerald-600",
-    category: "CLI Tool"
-  },
-  {
-    id: 3,
-    title: "Bookstore API",
-    subtitle: "Enterprise-Grade REST API",
-    description: "Scalable bookstore management system with comprehensive CRUD operations, authentication, and containerized deployment.",
-    technologies: ["NestJS", "TypeScript", "PostgreSQL", "TypeORM", "JWT", "Swagger", "Docker"],
-    features: [
-      "Modular NestJS architecture with TypeScript",
-      "Advanced filtering and search capabilities",
-      "JWT-based authentication system",
-      "Auto-generated Swagger documentation",
-      "Docker containerization for deployment"
-    ],
-    icon: <Server className="w-8 h-8" />,
-    color: "from-blue-400 to-indigo-600",
-    category: "Backend API"
-  },
-  {
-    id: 4,
-    title: "MangaPlumo",
-    subtitle: "Full-Stack Manga Platform",
-    description: "Complete manga downloading platform with advanced scraping, image processing, and modern React frontend.",
-    technologies: ["Node.js", "React", "Puppeteer", "Sharp", "Docker", "GitHub Actions", "Vercel", "Render"],
-    features: [
-      "Express API with Puppeteer scraping adapters",
-      "Sharp-powered image processing pipeline",
-      "Vite + React + Tailwind modern frontend",
-      "Automated CI/CD with GitHub Actions",
-      "Multi-platform deployment (Vercel + Render)"
-    ],
-    icon: <Globe className="w-8 h-8" />,
-    color: "from-purple-400 to-pink-600",
-    category: "Full-Stack"
-  }
-];
+    {
+      id: 1,
+      title: "Gate Tracker",
+      subtitle: "GATE Exam Preparation Manager",
+      description: "Comprehensive database application for tracking and managing GATE preparation progress with goal setting and performance analytics.",
+      technologies: ["Node.js", "Express", "MySQL", "React", "Chart.js", "Bootstrap"],
+      features: [
+        "Subject, topic, and subtopic organization system",
+        "Progress tracking with completion status",
+        "Goal setting with deadline management",
+        "Performance visualization with interactive charts",
+        "Data export/import for backup and portability"
+      ],
+      icon: <Database className="w-8 h-8" />,
+      color: "from-amber-400 to-orange-600",
+      category: "Database App"
+    },
+    {
+      id: 2,
+      title: "Manga Scraper CLI",
+      subtitle: "Command-Line Manga Aggregator",
+      description: "Advanced CLI tool for scraping manga from multiple sources and generating PDF collections with interactive UX.",
+      technologies: ["Node.js", "Puppeteer", "PDF-Lib", "Inquirer", "Axios", "CLI-Progress"],
+      features: [
+        "Multi-source manga scraping (Manhuaga.com, Manhuafast.net)",
+        "PDF bundling with custom formatting",
+        "Interactive CLI with progress visualization", 
+        "Modular adapter-based architecture"
+      ],
+      icon: <Terminal className="w-8 h-8" />,
+      color: "from-green-400 to-emerald-600",
+      category: "CLI Tool"
+    },
+    {
+      id: 3,
+      title: "Bookstore API",
+      subtitle: "Enterprise-Grade REST API",
+      description: "Scalable bookstore management system with comprehensive CRUD operations, authentication, and containerized deployment.",
+      technologies: ["NestJS", "TypeScript", "PostgreSQL", "TypeORM", "JWT", "Swagger", "Docker"],
+      features: [
+        "Modular NestJS architecture with TypeScript",
+        "Advanced filtering and search capabilities",
+        "JWT-based authentication system",
+        "Auto-generated Swagger documentation",
+        "Docker containerization for deployment"
+      ],
+      icon: <Server className="w-8 h-8" />,
+      color: "from-blue-400 to-indigo-600",
+      category: "Backend API"
+    },
+    {
+      id: 4,
+      title: "MangaPlumo",
+      subtitle: "Full-Stack Manga Platform",
+      description: "Complete manga downloading platform with advanced scraping, image processing, and modern React frontend.",
+      technologies: ["Node.js", "React", "Puppeteer", "Sharp", "Docker", "GitHub Actions", "Vercel", "Render"],
+      features: [
+        "Express API with Puppeteer scraping adapters",
+        "Sharp-powered image processing pipeline",
+        "Vite + React + Tailwind modern frontend",
+        "Automated CI/CD with GitHub Actions",
+        "Multi-platform deployment (Vercel + Render)"
+      ],
+      icon: <Globe className="w-8 h-8" />,
+      color: "from-purple-400 to-pink-600",
+      category: "Full-Stack"
+    }
+  ];
+
+  const experiences = [
+    {
+      id: 1,
+      role: "Project Intern",
+      company: "ADRDE, DRDO, Govt. of India",
+      location: "Agra, India",
+      duration: "May 2024 – Jun 2024",
+      type: "On-Site",
+      achievements: [
+        "Developed an intranet plotting application using React, parsing six file formats for 2D and 3D visualizations with customization",
+        "Created 3D simulations in Three.js enabling object tracking",
+        "Enhanced UX with interactive, customizable visualizations"
+      ],
+      icon: <Building className="w-8 h-8" />,
+      color: "from-red-400 to-red-600"
+    },
+    {
+      id: 2,
+      role: "Technical Team Member",
+      company: "Enactus KIIT (Student Society)",
+      location: "Bhubaneswar, India",
+      duration: "Mar 2023 – Jan 2025",
+      type: "R&D",
+      achievements: [
+        "Ideated and executed technical projects for social entrepreneurship",
+        "Built web apps for Enactus initiatives and participated in National Expositions 2023 & 2024",
+        "Won 2024 Early Stage Category at Enactus Nationals"
+      ],
+      icon: <Briefcase className="w-8 h-8" />,
+      color: "from-green-400 to-green-600"
+    }
+  ];
+
+  const education = [
+    {
+      id: 1,
+      degree: "B.Tech - Computer Science Engineering",
+      institution: "Kalinga Institute of Industrial Technology",
+      location: "Bhubaneswar, India",
+      duration: "Aug 2022 – Aug 2026",
+      grade: "CGPA: 9.35",
+      icon: <GraduationCap className="w-8 h-8" />,
+      color: "from-blue-400 to-purple-600"
+    },
+    {
+      id: 2,
+      degree: "High School, PCM",
+      institution: "Vivekanand Mission Vidyapeeth",
+      location: "Madhubani, Bihar, India",
+      duration: "Aug 2019 – Jul 2021",
+      grade: "",
+      icon: <GraduationCap className="w-8 h-8" />,
+      color: "from-cyan-400 to-blue-600"
+    },
+    {
+      id: 3,
+      degree: "Secondary School",
+      institution: "Delhi Public School",
+      location: "Biratnagar, Nepal",
+      duration: "Jul 2019",
+      grade: "",
+      icon: <GraduationCap className="w-8 h-8" />,
+      color: "from-indigo-400 to-purple-600"
+    }
+  ];
 
   useEffect(() => {
     setIsVisible(true);
     
     // Stagger project card animations
-    const timer = setInterval(() => {
+    const projectTimer = setInterval(() => {
       setVisibleProjects(prev => {
         if (prev.length < projects.length) {
           return [...prev, prev.length];
@@ -94,7 +164,37 @@ function Home() {
       });
     }, 300);
 
-    return () => clearInterval(timer);
+    // Stagger experience card animations
+    const experienceTimer = setTimeout(() => {
+      const expTimer = setInterval(() => {
+        setVisibleExperience(prev => {
+          if (prev.length < experiences.length) {
+            return [...prev, prev.length];
+          }
+          return prev;
+        });
+      }, 200);
+      setTimeout(() => clearInterval(expTimer), experiences.length * 200);
+    }, 1000);
+
+    // Stagger education card animations
+    const educationTimer = setTimeout(() => {
+      const eduTimer = setInterval(() => {
+        setVisibleEducation(prev => {
+          if (prev.length < education.length) {
+            return [...prev, prev.length];
+          }
+          return prev;
+        });
+      }, 200);
+      setTimeout(() => clearInterval(eduTimer), education.length * 200);
+    }, 1500);
+
+    return () => {
+      clearInterval(projectTimer);
+      clearTimeout(experienceTimer);
+      clearTimeout(educationTimer);
+    };
   }, []);
 
   const getTechIcon = (tech) => {
@@ -115,6 +215,9 @@ function Home() {
 
   return (
     <div className="min-h-screen pt-20">
+      {/* Space Navigator - Mini Game */}
+      <SpaceNavigator />
+
       {/* Hero Section */}
       <section id="about" className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto text-center">
@@ -148,7 +251,7 @@ function Home() {
 
           <div className={`${isVisible ? 'slide-in-right' : 'opacity-0'} mb-8`}>
             <h2 className="text-xl sm:text-2xl lg:text-3xl text-gray-300 mb-4" style={{ fontFamily: 'Michroma, monospace' }}>
-              Computer Science & Engineering Final Year Student
+              Computer Science Student
             </h2>
             <div className="flex items-center justify-center space-x-2 text-cyan-400 text-lg">
               <Rocket className="w-5 h-5" />
@@ -158,8 +261,8 @@ function Home() {
 
           <div className={`${isVisible ? 'fade-in' : 'opacity-0'} max-w-3xl mx-auto mb-12`}>
             <p className="text-lg sm:text-xl text-gray-400 leading-relaxed" style={{ fontFamily: 'Orbitron, monospace' }}>
-              Exploring the vast cosmos of web development. 
-              Currently navigating through the stellar world of <span className="text-cyan-400">Data Structures & Algorithms </span> 
+              Exploring the vast cosmos of web development and competitive programming. 
+              Currently navigating through the stellar world of <span className="text-cyan-400">Data Structures & Algorithms</span> 
               while crafting digital experiences that transcend ordinary boundaries.
             </p>
           </div>
@@ -192,19 +295,37 @@ function Home() {
       {/* Skills Section */}
       <Skills />
 
+      {/* Experience Section */}
+<TimelineSection 
+  id="experience"
+  title="Mission Logs" 
+  subtitle="Professional expeditions across the technology sector"
+  items={experiences}
+  type="experience"
+/>
+
+{/* Education Section */}
+<TimelineSection 
+  id="education"
+  title="Academy Records" 
+  subtitle="Educational journey through the cosmos of knowledge"
+  items={education}
+  type="education"
+/>
+
       {/* Works Section */}
       <section id="works" className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold glow-text mb-6" style={{ fontFamily: 'Zen Dots, cursive' }}>
-              Mission Archive {date}-{month}-{year}
+              Project Archive {date}-{month}-{year}
             </h2>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto" style={{ fontFamily: 'Orbitron, monospace' }}>
               Strategic projects deployed across the digital frontier
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {projects.map((project, index) => (
               <div
                 key={project.id}

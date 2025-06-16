@@ -39,21 +39,21 @@ const NavBar = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             <a 
-              href="#about" 
+              href="/#about" 
               className="flex items-center space-x-2 text-gray-300 hover:text-cyan-400 transition-colors duration-300 hover-glow px-4 py-2 rounded-lg"
             >
               <User className="w-4 h-4" />
               <span style={{ fontFamily: 'Orbitron, monospace' }}>About</span>
             </a>
             <a 
-              href="#skills" 
+              href="/#skills" 
               className="flex items-center space-x-2 text-gray-300 hover:text-cyan-400 transition-colors duration-300 hover-glow px-4 py-2 rounded-lg"
             >
               <Wrench className="w-4 h-4" />
               <span style={{ fontFamily: 'Orbitron, monospace' }}>Skills</span>
             </a>
             <a 
-              href="#works" 
+              href="/#works" 
               className="flex items-center space-x-2 text-gray-300 hover:text-cyan-400 transition-colors duration-300 hover-glow px-4 py-2 rounded-lg"
             >
               <Briefcase className="w-4 h-4" />

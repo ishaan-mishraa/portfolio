@@ -161,4 +161,52 @@ body {
     transform: scale(1) translateY(0); 
   }
 }
+/* Add these animations to your existing index.css */
+
+@keyframes animate-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-in {
+  animation: animate-in 0.3s ease-out;
+}
+
+.zoom-in-50 {
+  transform: scale(0.5);
+}
+
+/* Radar sweep animation */
+@keyframes radar-sweep {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-radar {
+  animation: radar-sweep 4s linear infinite;
+}
+
+/* Pulse animation for active stations */
+@keyframes station-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(0, 245, 255, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(0, 245, 255, 0);
+  }
+}
+
+.station-active {
+  animation: station-pulse 2s infinite;
+}
 
