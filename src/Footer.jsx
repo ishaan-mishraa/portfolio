@@ -152,7 +152,7 @@ const Footer = () => {
                     Made with <Heart className="w-4 h-4 text-red-400 mx-1 animate-pulse" /> and countless ☕
                   </p>
                   <p className="text-gray-500 text-xs" style={{ fontFamily: 'Orbitron, monospace' }}>
-                    &copy; {new Date().getFullYear()} Ishaan Mishraa
+                    &copy; {new Date().getFullYear()} Ishaan Mishra
                   </p>
                   <p className="text-gray-600 text-xs" style={{ fontFamily: 'Orbitron, monospace' }}>
                     All rights reserved
