@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import NavBar from './NavBar';
 import Home from './Home';
 import Contact from './Contact';
+import Footer from './Footer';
 import SpaceBackground from './SpaceBackground';
 
 const App = () => {
@@ -15,6 +15,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
+        <Footer />
       </div>
     </Router>
   );
