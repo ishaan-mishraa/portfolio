@@ -8,6 +8,9 @@ const Contact = () => {
     phone: '',
     work: ''
   });
+  
+  // Added a loading state for better UX during the API call
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
     setFormData({
@@ -16,10 +19,32 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const mailtoLink = `mailto:ishaancodes01@gmail.com?subject=Project Inquiry from ${formData.name}&body=Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0APhone: ${formData.phone}%0D%0A%0D%0AProject Description:%0D%0A${formData.work}`;
-    window.location.href = mailtoLink;
+    setIsSubmitting(true);
+    
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        alert('Transmission sent successfully!');
+        // Clear the form fields after successful submission
+        setFormData({ name: '', email: '', phone: '', work: '' });
+      } else {
+        alert('Failed to launch message. Connection lost.');
+      }
+    } catch (error) {
+      console.error('Error sending message:', error);
+      alert('System error. Please try again later.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -108,11 +133,12 @@ const Contact = () => {
 
             <button
               type="submit"
-              className="w-full neon-border px-8 py-4 rounded-full text-cyan-400 hover:bg-cyan-400 hover:text-black transition-all duration-300 flex items-center justify-center space-x-2 hover-glow font-bold"
+              disabled={isSubmitting}
+              className={`w-full neon-border px-8 py-4 rounded-full text-cyan-400 hover:bg-cyan-400 hover:text-black transition-all duration-300 flex items-center justify-center space-x-2 font-bold ${isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover-glow'}`}
               style={{ fontFamily: 'Orbitron, monospace' }}
             >
-              <Send className="w-5 h-5" />
-              <span>Launch Message</span>
+              <Send className={`w-5 h-5 ${isSubmitting ? 'animate-pulse' : ''}`} />
+              <span>{isSubmitting ? 'Launching...' : 'Launch Message'}</span>
             </button>
           </form>
         </div>
