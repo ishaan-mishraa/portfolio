@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Plus, Instagram, Github, Linkedin, Twitter } from 'lucide-react';
+import { Plus, Instagram, Github, Linkedin } from 'lucide-react';
+import { FaXTwitter } from "react-icons/fa6";
 
 const ExpandButton = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,7 +16,7 @@ const ExpandButton = () => {
 
   const rightSocialLinks = [
     { icon: <Github className="w-6 h-6" />, url: "https://github.com/ishaan-mishraa", color: "from-gray-600 to-gray-800" },
-    { icon: <Twitter className="w-6 h-6" />, url: "https://x.com/Ishaan0_0mishra", color: "from-cyan-400 to-blue-500" },
+    { icon: <FaXTwitter className="w-6 h-6" />, url: "https://x.com/ishaanmishraa", color: "from-cyan-400 to-blue-500" },
   ];
 
   return (
