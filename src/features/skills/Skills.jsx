@@ -1,59 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Code, Database, Globe, Terminal, Cpu, Layers, Zap, Gauge } from 'lucide-react';
+import * as LucideIcons from 'lucide-react'; 
+import { portfolioData } from '../../config/portfolio.config';
 
 const Skills = () => {
   const [visibleSkills, setVisibleSkills] = useState([]);
-
-  const skills = [
-    { 
-      icon: <Cpu className="w-12 h-12" />, 
-      name: 'C++', 
-      level: 85,
-      color: 'from-blue-400 to-blue-600'
-    },
-    { 
-      icon: <Globe className="w-12 h-12" />, 
-      name: 'HTML5', 
-      level: 90,
-      color: 'from-orange-400 to-orange-600'
-    },
-    { 
-      icon: <Layers className="w-12 h-12" />, 
-      name: 'CSS3', 
-      level: 85,
-      color: 'from-cyan-400 to-cyan-600'
-    },
-    { 
-      icon: <Code className="w-12 h-12" />, 
-      name: 'JavaScript', 
-      level: 80,
-      color: 'from-yellow-400 to-yellow-600'
-    },
-    { 
-      icon: <Database className="w-12 h-12" />, 
-      name: 'PostgreSQL', 
-      level: 70,
-      color: 'from-purple-400 to-purple-600'
-    },
-    { 
-      icon: <Zap className="w-12 h-12" />, 
-      name: 'Node.js', 
-      level: 75,
-      color: 'from-green-400 to-green-600'
-    },
-    { 
-      icon: <Gauge className="w-12 h-12" />, 
-      name: 'React.js', 
-      level: 80,
-      color: 'from-cyan-400 to-blue-600'
-    },
-    { 
-      icon: <Terminal className="w-12 h-12" />, 
-      name: 'Linux CLI', 
-      level: 75,
-      color: 'from-gray-400 to-gray-600'
-    },
-  ];
+  
+  // Use the expanded list from your single source of truth
+  const { skills } = portfolioData;
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -63,10 +16,23 @@ const Skills = () => {
         }
         return prev;
       });
-    }, 200);
+    }, 150);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [skills.length]);
+
+  /**
+   * Helper to dynamically resolve Lucide icon components from strings.
+   * It capitalizes the first letter to match Lucide's export naming convention.
+   */
+  const getIcon = (iconName) => {
+    if (!iconName) return <LucideIcons.Code className="w-12 h-12" />;
+    
+    const capitalizedName = iconName.charAt(0).toUpperCase() + iconName.slice(1);
+    const IconComponent = LucideIcons[capitalizedName] || LucideIcons.Code;
+    
+    return <IconComponent className="w-12 h-12" />;
+  };
 
   return (
     <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8">
@@ -90,14 +56,14 @@ const Skills = () => {
               style={{ transitionDelay: `${index * 0.1}s` }}
             >
               <div className="text-center">
-                <div className={`text-cyan-400 mb-4 flex justify-center floating`} style={{ animationDelay: `${index * 0.2}s` }}>
-                  {skill.icon}
+                <div className="text-cyan-400 mb-4 flex justify-center floating" style={{ animationDelay: `${index * 0.2}s` }}>
+                  {getIcon(skill.icon)}
                 </div>
                 <h3 className="text-xl font-bold text-white mb-4" style={{ fontFamily: 'Orbitron, monospace' }}>
                   {skill.name}
                 </h3>
                 
-                {/* Skill Level Bar */}
+                {/* Dynamic Skill Level Bar */}
                 <div className="w-full bg-gray-800 rounded-full h-2 mb-2">
                   <div
                     className={`bg-gradient-to-r ${skill.color} h-2 rounded-full transition-all duration-1000 ease-out`}

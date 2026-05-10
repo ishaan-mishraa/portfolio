@@ -1,9 +1,10 @@
+// src/App.jsx
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import NavBar from './NavBar';
-import Home from './Home';
-import Contact from './Contact';
-import Footer from './Footer';
-import SpaceBackground from './SpaceBackground';
+import NavBar from './components/layout/NavBar';
+import Footer from './components/layout/Footer';
+import SpaceBackground from './components/layout/SpaceBackground';
+import Home from './pages/Home';
+import Contact from './pages/Contact'; // Note: Move Contact.jsx to src/pages/
 
 const App = () => {
   return (
