@@ -354,3 +354,56 @@ body {
   0% { top: 0; }
   100% { top: 100%; }
 }
+
+/* src/styles/globals.css */
+
+/* Project Deck Transitions */
+.project-card-wrapper {
+  perspective: 1000px;
+}
+
+.project-card {
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center center;
+}
+
+.card-active {
+  transform: translateX(0) scale(1);
+  opacity: 1;
+  z-index: 30;
+}
+
+.card-prev {
+  transform: translateX(-105%) scale(0.9) rotateY(5deg);
+  opacity: 0.4;
+  z-index: 20;
+  pointer-events: none;
+}
+
+.card-next {
+  transform: translateX(105%) scale(0.9) rotateY(-5deg);
+  opacity: 0.4;
+  z-index: 20;
+  pointer-events: none;
+}
+
+.card-hidden {
+  transform: scale(0.8);
+  opacity: 0;
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* Live Feed Iframe effects */
+.screen-glitch {
+  animation: glitch 0.2s linear infinite;
+}
+
+@keyframes glitch {
+  0% { transform: translate(0) }
+  20% { transform: translate(-2px, 1px) }
+  40% { transform: translate(-1px, -1px) }
+  60% { transform: translate(2px, 1px) }
+  80% { transform: translate(1px, -1px) }
+  100% { transform: translate(0) }
+}

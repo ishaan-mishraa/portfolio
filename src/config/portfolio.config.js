@@ -104,8 +104,51 @@ skills: [
       icon: "globe",
       color: "from-purple-400 to-pink-600",
       category: "Full-Stack"
+    },
+    {
+      id: "cricmarket",
+      title: "CricMarket",
+      subtitle: "Elite T20 Analytics & AI Drafting Terminal",
+      description: "A full-stack, edge-computed platform simulating the 2026 Mega Auction. Features real-time franchise budget tracking, dynamic multi-currency hydration, and a Gemini-powered AI General Manager.",
+      technologies: [
+        "Next.js", 
+        "Supabase", 
+        "Hono", 
+        "Gemini AI", 
+        "Python", 
+        "Recharts",
+        "GitHub Actions"
+      ],
+      features: [
+        "Live Mega Auction draft simulator with strict 125Cr INR cap tracking",
+        "Gemini-powered AI General Manager for tactical squad analysis",
+        "Real-time multi-currency hydration via Open Exchange Rates API",
+        "Automated Python data scraping pipeline via GitHub Actions",
+        "Interactive player valuation stock-charts using Recharts"
+      ],
+      icon: "globe",
+      color: "from-emerald-500 to-indigo-500",
+      category: "Full-Stack AI"
     }
+
   ],
+  // In portfolio.config.js
+  featuredProject: {
+    id: "cricmarket",
+    title: "CricMarket",
+    subtitle: "Elite T20 Franchise Analytics & AI Drafting Terminal",
+    description: "A full-stack, edge-computed platform simulating the 2026 Mega Auction. Features real-time franchise budget tracking, dynamic multi-currency valuations, and an integrated Gemini-powered AI General Manager for data-driven squad building.",
+    technologies: [
+      "Next.js", 
+      "Supabase", 
+      "Hono (Edge API)", 
+      "Gemini AI", 
+      "Tailwind CSS", 
+      "Recharts"
+    ],
+    liveUrl: "https://cricmarket.ishaanm.dev",
+    color: "from-emerald-500 to-indigo-500" // Matches your market (green) and AI (indigo) aesthetic
+},
 
   experience: [
     {

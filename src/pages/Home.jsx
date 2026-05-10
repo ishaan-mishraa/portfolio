@@ -6,7 +6,8 @@ import Skills from '../features/skills/Skills';
 import ExpandButton from '../components/ui/ExpandButton';
 import SpaceNavigator from '../components/layout/SpaceNavigator';
 import TimelineSection from '../features/resume/TimelineSection';
-import ProjectCarousel from '../features/projects/ProjectCarousel';
+import ProjectDeck from '../features/projects/ProjectDeck';
+import LiveProjectFeed from '../features/projects/LiveProjectFeed';
 import { portfolioData } from '../config/portfolio.config';
 import OmnitrixSkills from '../features/skills/OmnitrixSkills';
 import ExperienceTerminal from '../features/resume/ExperienceTerminal';
@@ -93,9 +94,10 @@ export default function Home() {
             </p>
           </div>
 
-          <ProjectCarousel projects={portfolioData.projects} />
+          <ProjectDeck projects={portfolioData.projects} />
         </div>
       </section>
+      <LiveProjectFeed project={portfolioData.featuredProject} />
     </div>
   );
 }
