@@ -267,21 +267,49 @@ body {
 }
 
 .skill-node {
-  /* Subtle orbiting movement */
-  transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  /* Slight subtle pulse for non-active nodes */
+  opacity: 0.6;
 }
 
-.skill-node:hover, .skill-node.active {
+.skill-node:hover {
+  background: rgba(0, 245, 255, 0.1);
+  box-shadow: 0 0 10px rgba(0, 245, 255, 0.5);
+  opacity: 0.8;
+  transform: scale(1.1); /* Just a tiny bump on hover */
+}
+
+/* This targets the ACTIVE node */
+.skill-node.active {
   background: rgba(0, 245, 255, 0.2);
-  box-shadow: 0 0 15px #00f5ff;
+  box-shadow: 0 0 20px #00f5ff, inset 0 0 10px #00f5ff;
   border-color: #00f5ff;
-  transform: scale(1.2);
+  opacity: 1;
+  /* Massive 1.8x Scale as requested */
+  transform: scale(1.8) !important; 
+  z-index: 30;
 }
 
 .omnitrix-dial {
-  /* The dashed orbital ring */
+  /* Removed the dashed border here, moved to the new HUD rings */
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* New HUD Ring Animations */
+.hud-ring-outer {
+  border: 1px solid rgba(0, 245, 255, 0.1);
+  border-left-color: rgba(0, 245, 255, 0.6);
+  border-right-color: rgba(0, 245, 255, 0.6);
+  animation: spin 12s linear infinite;
+}
+
+.hud-ring-inner {
   border: 2px dashed rgba(0, 245, 255, 0.2);
-  transition: transform 1s ease-in-out;
+  animation: spin 20s linear infinite reverse;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 /* src/styles/globals.css */
